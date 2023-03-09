@@ -11,6 +11,8 @@ import {
 export default function GoalInput({ visible, onAddGoal, onHide }) {
   const [enteredGoalText, setEnteredGoalText] = useState("");
 
+  const goalImageUrl = require("../assets/images/goal.png");
+
   function goalInputHandler(enteredText) {
     setEnteredGoalText(enteredText);
   }
@@ -28,10 +30,7 @@ export default function GoalInput({ visible, onAddGoal, onHide }) {
   return (
     <Modal visible={visible} animationType={"slide"}>
       <View style={styles.modal}>
-        <Image
-          style={styles.image}
-          source={require("../assets/images/goal.png")}
-        />
+        <Image style={styles.image} source={goalImageUrl} />
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="your course goal"
